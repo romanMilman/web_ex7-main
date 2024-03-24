@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="imageBrowserApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Browser</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+      .small-images img {
+        cursor: pointer;
+        margin: 5px;
+        border: 2px solid #f3f3f3;
+      }
+      .small-images img:hover {
+        border: 2px solid #333;
+      }
+    </style>
+  </head>
+  <body ng-controller="ImageBrowserController">
+    <div class="container">
+      <img ng-src="{{currentImage}}" class="img-fluid" alt="Selected Image" />
+      <div class="small-images">
+        <img
+          ng-repeat="image in images"
+          ng-src="{{image.thumbnailUrl}}"
+          ng-click="setImage(image.url)"
+          class="img-thumbnail"
+        />
+      </div>
+    </div>
+
+    <script>
+      angular
+        .module("imageBrowserApp", [])
+        .controller("ImageBrowserController", function ($scope) {
+          $scope.images = [
+            {
+              id: 1,
+              url: "https://picsum.photos/id/1/350/350",
+              thumbnailUrl: "https://picsum.photos/id/1/50/50",
+            },
+            {
+              id: 2,
+              url: "https://picsum.photos/id/2/350/350",
+              thumbnailUrl: "https://picsum.photos/id/2/50/50",
+            },
+            {
+              id: 3,
+              url: "https://picsum.photos/id/3/350/350",
+              thumbnailUrl: "https://picsum.photos/id/3/50/50",
+            },
+            {
+              id: 4,
+              url: "https://picsum.photos/id/4/350/350",
+              thumbnailUrl: "https://picsum.photos/id/4/50/50",
+            },
+            {
+              id: 5,
+              url: "https://picsum.photos/id/5/350/350",
+              thumbnailUrl: "https://picsum.photos/id/5/50/50",
+            },
+            {
+              id: 6,
+              url: "https://picsum.photos/id/6/350/350",
+              thumbnailUrl: "https://picsum.photos/id/6/50/50",
+            },
+            {
+              id: 7,
+              url: "https://picsum.photos/id/7/350/350",
+              thumbnailUrl: "https://picsum.photos/id/7/50/50",
+            },
+            {
+              id: 8,
+              url: "https://picsum.photos/id/8/350/350",
+              thumbnailUrl: "https://picsum.photos/id/8/50/50",
+            },
+            {
+              id: 9,
+              url: "https://picsum.photos/id/9/350/350",
+              thumbnailUrl: "https://picsum.photos/id/9/50/50",
+            },
+            {
+              id: 10,
+              url: "https://picsum.photos/id/10/350/350",
+              thumbnailUrl: "https://picsum.photos/id/10/50/50",
+            },
+            {
+              id: 11,
+              url: "https://picsum.photos/id/11/350/350",
+              thumbnailUrl: "https://picsum.photos/id/11/50/50",
+            },
+            {
+              id: 12,
+              url: "https://picsum.photos/id/12/350/350",
+              thumbnailUrl: "https://picsum.photos/id/12/50/50",
+            },
+            {
+              id: 13,
+              url: "https://picsum.photos/id/13/350/350",
+              thumbnailUrl: "https://picsum.photos/id/13/50/50",
+            },
+            {
+              id: 14,
+              url: "https://picsum.photos/id/14/350/350",
+              thumbnailUrl: "https://picsum.photos/id/14/50/50",
+            },
+            {
+              id: 15,
+              url: "https://picsum.photos/id/15/350/350",
+              thumbnailUrl: "https://picsum.photos/id/15/50/50",
+            },
+            {
+              id: 16,
+              url: "https://picsum.photos/id/16/350/350",
+              thumbnailUrl: "https://picsum.photos/id/16/50/50",
+            },
+            {
+              id: 17,
+              url: "https://picsum.photos/id/17/350/350",
+              thumbnailUrl: "https://picsum.photos/id/17/50/50",
+            },
+            {
+              id: 18,
+              url: "https://picsum.photos/id/18/350/350",
+              thumbnailUrl: "https://picsum.photos/id/18/50/50",
+            },
+            {
+              id: 19,
+              url: "https://picsum.photos/id/19/350/350",
+              thumbnailUrl: "https://picsum.photos/id/19/50/50",
+            },
+            {
+              id: 20,
+              url: "https://picsum.photos/id/20/350/350",
+              thumbnailUrl: "https://picsum.photos/id/20/50/50",
+            },
+          ];
+          $scope.currentImage = $scope.images[0].url; // Set initial image
+
+          $scope.setImage = function (url) {
+            $scope.currentImage = url;
+          };
+        });
+    </script>
+  </body>
+</html>
